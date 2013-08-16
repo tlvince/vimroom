@@ -168,6 +168,9 @@ function! <SID>VimroomToggle()
         " Remove wrapping and linebreaks
         set nowrap
         set nolinebreak
+        " Revert ruler and mode
+        set showmode
+        set ruler
     else
         if s:is_the_screen_wide_enough()
             let s:active = 1
@@ -252,6 +255,9 @@ function! <SID>VimroomToggle()
             exec( "hi StatusLineNC " . l:highlightfgbgcolor )
             set t_mr=""
             set fillchars+=vert:\ 
+            " Disable ruler and mode
+            set noshowmode
+            set noruler
         endif
     endif
 endfunction
